@@ -1,39 +1,34 @@
 <img width="3188" height="1202" alt="frame (3)" src="https://github.com/user-attachments/assets/517ad8e9-ad22-457d-9538-a9e62d137cd7" />
 
 
-# [Project Name] 🎯
+# PotterStuff 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: CharmBits
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Team Lead: Hilfa Fathima P.M - EMEA College of arts and science
+- Member 2: Mushrifa -EMEA College of arts and science
+
 
 ### Project Description
-[2-3 lines about what your project does]
+The website "PotterStuff" is fun and entretaining especially for harry potter fans.It has a sorting ceremony as in hogwarts where the user gets sorted into one of the houses in hogwarts based on their characteristic traits and also there is a chat system where you can chat with the harry potter character "fred weasly" who gives  you funny replies and its quiet stress relieving 
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+This is an entretaining website but still it helps people to understand their personality traits. and chatting with fred is a typical stress relief
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+fun, engagement and timepass and a big consideration for harry potter fans too.
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- html, css and js
+- Gemini API
 
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+
 
 ### Implementation
 For Software:
@@ -41,7 +36,7 @@ For Software:
 [commands]
 
 # Run
-[commands]
+With live server
 
 ### Project Documentation
 For Software:
