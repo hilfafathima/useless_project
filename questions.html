@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sorting Ceremony — PotterStuff</title>
+  <link rel="stylesheet" href="questions.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- background (local hogwarts-bg.jpg if present) -->
+  <div class="page-bg"></div>
+
+  <main class="stage">
+    <header class="site-title">⚡ Sorting Ceremony ⚡</header>
+
+    <section id="quiz-card" class="card">
+      <div class="hat-area">🎩</div>
+
+      <div class="question-area">
+        <div class="progress">Question <span id="q-index">1</span> / 15</div>
+        <h2 id="question-text" class="question-text">Loading question…</h2>
+
+        <div id="options" class="options" aria-live="polite">
+          <!-- options injected here -->
+        </div>
+
+        <div class="hint">Choose honestly — the Hat listens carefully.</div>
+      </div>
+    </section>
+
+    <!-- thinking overlay -->
+    <div id="thinking" class="thinking hidden" aria-hidden="true">
+      <div class="thinking-box">
+        <div class="hat-anim">🎩</div>
+        <div class="hat-lines" id="thinking-text">Hmm… deciding…</div>
+      </div>
+    </div>
+
+    <!-- result modal -->
+    <div id="result-modal" class="result-modal hidden" role="dialog" aria-modal="true" aria-labelledby="result-title">
+      <div class="result-card">
+        <div id="result-crest" class="result-crest" aria-hidden="true"></div>
+        <h1 id="result-title" class="result-title">You belong to …</h1>
+        <p id="result-desc" class="result-desc"></p>
+        <div class="result-actions">
+          <button id="share-btn" class="btn outline" onclick="copyResult()">Copy Result</button>
+          <button id="restart" class="btn" onclick="restartQuiz()">Try Again</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="questions.js"></script>
+</body>
+</html>

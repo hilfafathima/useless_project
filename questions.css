@@ -1,0 +1,121 @@
+:root{
+  --gold:#d4a017;
+  --cream:#f5e6c4;
+  --card-bg: rgba(18,12,8,0.88);
+  --accent: rgba(212,160,23,0.12);
+  --maxwidth: 920px;
+}
+
+/* reset */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family: "Cinzel", serif;background:#070607;color:var(--cream);}
+
+/* background: tries local hogwarts-bg.jpg (if you keep one), otherwise fallback Unsplash castle */
+.page-bg{
+  position:fixed;
+  inset:0;
+  background-image:
+    url('hogwarts-bg.jpg'),
+    url('https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1800&q=80');
+  background-size:cover;
+  background-position:center;
+  filter:brightness(0.46) contrast(1.02);
+  z-index:-2;
+}
+.page-bg::after{
+  content:"";
+  position:absolute; inset:0;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0.7) 65%);
+}
+
+/* stage */
+.stage{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:28px;
+  gap:18px;
+}
+
+/* title */
+.site-title{
+  color:var(--gold);
+  font-size:28px;
+  letter-spacing:2px;
+  text-shadow:0 8px 18px rgba(0,0,0,0.7);
+  font-family: 'Playfair Display', serif;
+}
+
+/* card */
+.card{
+  width:94%;
+  max-width:var(--maxwidth);
+  background: linear-gradient(180deg, rgba(8,4,2,0.92), rgba(12,6,3,0.95));
+  border: 3px solid rgba(212,160,23,0.14);
+  border-radius:18px;
+  box-shadow: 0 20px 80px rgba(0,0,0,0.6);
+  padding:26px;
+  display:flex;
+  gap:18px;
+  align-items:flex-start;
+  position:relative;
+}
+
+/* hat area (left column) */
+.hat-area{ min-width:82px; font-size:44px; display:flex; align-items:flex-start; justify-content:center; opacity:0.95; transform:translateY(-6px) }
+
+/* question area */
+.progress{ font-size:13px; color:rgba(245,230,200,0.85); margin-bottom:8px }
+.question-text{ font-size:1.55rem; margin:4px 0 18px; color:var(--cream); line-height:1.4; text-shadow: 0 6px 18px rgba(0,0,0,0.6) }
+
+/* option list (A→D vertical) */
+.options{ display:flex; flex-direction:column; gap:12px; align-items:center }
+.option{
+  width:100%;
+  max-width:760px;
+  display:flex; gap:14px; align-items:center;
+  padding:14px 18px; border-radius:12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12));
+  border: 2px solid rgba(212,160,23,0.06);
+  cursor:pointer; transition: transform .18s ease, box-shadow .18s ease, background .18s;
+  color:var(--cream); font-size:1.05rem; text-align:left; box-shadow:0 8px 20px rgba(0,0,0,0.45);
+}
+.option .label{ min-width:44px; height:44px; border-radius:8px; background: linear-gradient(180deg,var(--gold), #b78112); color:#0f0f0f; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:1rem; box-shadow:0 6px 18px rgba(0,0,0,0.45), inset 0 -3px 6px rgba(0,0,0,0.12) }
+.option .opt-text{ flex:1; padding-right:6px }
+.option:hover{ transform: translateY(-6px); box-shadow:0 22px 40px rgba(0,0,0,0.6); background: linear-gradient(180deg, rgba(212,160,23,0.06), rgba(0,0,0,0.12)) }
+
+/* hint text */
+.hint{ margin-top:14px; font-size:13px; color: rgba(245,230,200,0.78) }
+
+/* thinking overlay */
+.thinking{ position:fixed; inset:0; display:flex; align-items:center; justify-content:center; z-index:40; pointer-events:none }
+.thinking.hidden{ display:none }
+.thinking-box{ pointer-events:none; background: rgba(10,6,4,0.64); padding:16px 22px; border-radius:12px; border:1px solid rgba(212,160,23,0.06); box-shadow:0 18px 60px rgba(0,0,0,0.6) }
+.hat-anim{ font-size:40px }
+.hat-lines{ color:var(--cream); font-weight:600; font-size:1rem }
+
+/* result modal */
+.result-modal{ position:fixed; inset:0; display:flex; align-items:center; justify-content:center; z-index:60; background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.75)) }
+.result-modal.hidden{ display:none }
+.result-card{ width:92%; max-width:720px; background: linear-gradient(180deg, rgba(24,16,10,0.98), rgba(10,6,4,0.99)); border:3px solid rgba(212,160,23,0.12); padding:28px; border-radius:14px; text-align:center; box-shadow:0 30px 80px rgba(0,0,0,0.7) }
+
+/* crest: we render inline SVGs in JS */
+.result-crest{ font-size:72px; margin-bottom:8px; transform:translateY(-6px); text-shadow:0 14px 30px rgba(0,0,0,0.7) }
+.result-title{ font-size:2.2rem; color:var(--gold); text-shadow:0 0 26px rgba(255,220,120,0.20) }
+.result-desc{ margin-top:12px; color:var(--cream) }
+
+.result-actions{ margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap }
+
+/* buttons */
+.btn{ padding:10px 18px; border-radius:10px; border:none; cursor:pointer; font-weight:700; color:#0f0f0f; background:var(--gold); box-shadow:0 8px 20px rgba(0,0,0,0.35) }
+.btn.outline{ background:transparent; color:var(--gold); border:2px solid rgba(212,160,23,0.18) }
+
+/* responsiveness */
+@media (max-width:760px){
+  .card{ padding:18px; flex-direction:column; align-items:center }
+  .hat-area{ order:-1 }
+  .question-text{ font-size:1.25rem }
+  .result-crest{ font-size:56px }
+}

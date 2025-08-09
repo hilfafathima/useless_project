@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fred Weasley Chat</title>
+    <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+    <div id="chat-container">
+        <!-- Background pattern -->
+        <div id="background-pattern"></div>
+        
+        <!-- Magical sparkles overlay -->
+        <div id="sparkles-overlay">
+            <div class="sparkle sparkle-1"></div>
+            <div class="sparkle sparkle-2"></div>
+            <div class="sparkle sparkle-3"></div>
+            <div class="sparkle sparkle-4"></div>
+            <div class="sparkle sparkle-5"></div>
+        </div>
+
+        <!-- Header -->
+        <div id="chat-header">
+            <div class="header-content">
+                <div class="avatar">FW</div>
+                <div class="user-info">
+                    <h2>Fred Weasley</h2>
+                    <p>Co-owner of Weasleys' Wizard Wheezes</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Messages -->
+        <div id="messages-container">
+            <div id="messages"></div>
+        </div>
+
+        <!-- Input -->
+        <div id="input-container">
+            <button id="emoji-btn">😊</button>
+            <input type="text" id="message-input" placeholder="Ask Fred anything...">
+            <button id="send-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22,2 15,22 11,13 2,9"></polygon>
+                </svg>
+            </button>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/@google/generative-ai"></script>
+    <script src="chat.js"  type="module"></script>
+</body>
+</html>

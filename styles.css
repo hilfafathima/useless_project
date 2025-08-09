@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(hogwarts.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    text-align: center;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: -1;
+}
+
+.site-title {
+    font-size:  100px;;
+    padding: 20px;
+    color: rgb(122, 106, 16);
+    text-shadow: 2px 2px 5px black;
+    
+}
+
+.welcome-text {
+    font-size: 1.8rem;
+    margin-top: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #f5deb3;
+}
+
+.button-container {
+    margin-top: 40px;
+}
+
+.button-container button {
+    background-color: rgba(218,165,32,0.9);
+    color: black;
+    font-size: 1.2rem;
+    padding: 12px 25px;
+    margin: 10px;
+    border:thick;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.button-container button:hover {
+    background-color: gold;
+    transform: scale(1.05);
+}
